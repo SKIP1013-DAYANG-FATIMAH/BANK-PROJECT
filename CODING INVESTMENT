@@ -1,0 +1,187 @@
+import java.util.Scanner;
+
+public class Investment {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		double future,investment,simpleInterest,compound,calrate,interest;
+		int total;
+		double [] percent= {1.8,0.5,2.5,1.2};
+		String [] primary= {"Saving For Retirement","General Saving","Emergency Fund","Major Purchare"};
+		int yearpass=0;
+		String info[]= new String [2];
+
+		showMessage();
+		personalInfo(info);
+		showMessage2();
+		showMessage2() ;
+		String name=readName();
+		int age=readAge();
+		
+		 
+		System.out.println("==============================================================");
+		int reason=readReason();
+		switch(reason) {
+	    case 1 : System.out.println(primary[0]); break;
+		case 2 : System.out.println(primary[1]); break;
+		case 3 : System.out.println(primary[2]); break;
+		case 4 : System.out.println(primary[3]);
+	    }
+		System.out.println("\nAre You Currently Investing?\n  1.YES\n  2.NO");
+		int currentInvest=sc.nextInt();
+		switch(currentInvest) {
+	    case 1 : System.out.println("YES"); break;
+		case 2 : System.out.println("NO"); 
+		}
+		System.out.println("\nEnter Investment Amount: ");
+		double amount=sc.nextDouble();
+		System.out.println("\nEnter Financial Goal: ");
+		double goal=sc.nextDouble();
+		
+		int year=readYear();
+		
+		showMessage2() ;
+		System.out.println("CHOOSE TYPE OF INVESTMENT:");
+		System.out.println("    INVESTMENT            RATE");
+		System.out.println("\n1.UNIT TRUST FUND         " + percent[0]+"%");
+		System.out.println("\n2.    GOLD                " + percent[1]+"%");
+		System.out.println("\n3.    BONDS               " + percent[2]+"%");
+		System.out.println("\n4.    SUKUK               " + percent[3]+"%");
+		int typeInvest=sc.nextInt();
+		switch(typeInvest) {
+		case 1 : System.out.println("UNIT TRUST FUND - "+ percent[0]+"%"); break;
+		case 2 : System.out.println("GOLD - "+ percent[1]+"%"); break;
+		case 3 : System.out.println("BONDS - "+ percent[2]+"%"); break;
+		case 4 : System.out.println("SUKUK - "+percent[3]+"%"); 
+		}
+		
+		System.out.println("\nEnter Interest Rate : ");
+		double rate=sc.nextDouble();
+		
+		total=year+age;
+		investment=year*amount;
+	    calrate=rate/100;
+		simpleInterest=(rate/100)*amount*year;
+		future = amount*Math.pow((1 + rate/100),(year));
+		compound=future-amount-simpleInterest;
+		interest=simpleInterest+compound;
+		
+		
+		  System.out.println("********** YOUR INVESTMENT PORTFOLIO **********");	
+		  System.out.println("\n     Name               : "+name);
+		  System.out.println("     Starting Age       : "+age);
+		  System.out.println("     Age End Investment : "+total);
+		  System.out.printf("\n   Yearly Investment        : RM %.2f ",amount);
+		  System.out.printf("\n   Total Amount Invested    : RM %.2f ",investment);
+		  System.out.printf("\n   Simple Interest          : RM %.2f ",simpleInterest);
+		  System.out.printf("\n   Compound Interest        : RM %.2f ",compound);
+		  System.out.printf("\n   Total Interest Earned    : RM %.2f ",interest);
+		  System.out.printf("\n   Accumulated Value is     : RM %.2f " , future);
+			  System.out.println("\n_____________________________________________________");
+			  System.out.println("        DETAILS OF FUTURE VALUE IN INVESTMENT\n");
+			  System.out.println("           YEAR             FUTURE AMOUNT");
+			  while(yearpass < year) 
+
+			    {	
+				  amount+=(amount*calrate);	
+			      yearpass++;     
+
+			      System.out.printf("             %d                %,.2f \n", yearpass, amount);
+			    }
+			    System.out.println();
+
+			    System.out.printf("    After "+year+" Years at "+rate+ " Interest, " +
+			                       "You Will Have RM %,.2f \n\n", amount);
+			    showMessage2() ;
+			   
+			    System.out.println("\n\nIF YOUR ENTIRE LOST AT 10%, WHAT WOULD YOU DO?");
+				  System.out.println("  1.sell all investment\n  2.keep all investment\n  3.invest to other market");
+				  int lostChoice=sc.nextInt();
+				  System.out.println(lostChoice);
+				  if(lostChoice!=3) {
+					  System.out.println("\nWE KEEP YOUR CHOICE FOR FUTURE NEEDS. THANK YOU!!");
+					  showMessage1();
+				  }
+				  if(lostChoice==3) {
+					  System.out.println("PLEASE CHOOSE OTHER MARKET");
+				      System.out.println("\n  1.UNIT TRUST FUND\n  2.GOLD\n  3.BONDS\n  4.SUKUK");
+				      int other=sc.nextInt();
+				  	switch(other) {
+				  	case 1 : System.out.println("UNIT TRUST FUND"); break;
+				  	case 2 : System.out.println("GOLD"); break;
+				  	case 3 : System.out.println("BONDS"); break;
+				  	case 4 : System.out.println("SUKUK"); break;
+				  	}
+				  	
+				  	while(other==typeInvest) {
+				  		System.out.println("SORRY! THIS IS YOUR CURRENT INVESTMENT. PLEASE CHOOSE ANOTHER MARKET");
+				  		other++;
+				  		other=sc.nextInt();
+				  	}
+				  	if (other!=typeInvest) {
+				  		 System.out.println("\nWE KEEP YOUR CHOICE FOR FUTURE NEEDS. THANK YOU!!");
+					     showMessage1();
+				  	}
+				  }
+	}
+	public static void showMessage() {
+		System.out.println("**********WELCOME TO UUM BANK**********\n");
+	}
+	public static void showMessage1() {
+		System.out.println("******************************************************");
+	}
+	public static void showMessage2() {
+		System.out.println("_____________________________________________________");
+	}
+
+	public static void personalInfo(String [] info) {
+		Scanner sc=new Scanner(System.in);
+		String username = info[0];
+	    String password = info[1];
+	    
+	    System.out.println("Enter your username and password");
+	    System.out.print("   USERNAME: " );
+	    info [0] = sc.nextLine();
+	    System.out.print("   PASSWORD: " );
+	    info [1] = sc.nextLine();
+	}
+	 
+	public static int readReason() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("What's Your Primary Reason For Investing?");
+		System.out.println(" 1.Saving For Retirement\n 2.General Saving\n 3.Emergency Fund\n 4.Major Purchase");
+		int reason=sc.nextInt();
+		return reason;
+	}
+	 public static String readName() {
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("\nENTER NAME: ");
+		 String name=sc.next();
+		return name;
+	 }
+	 public static int readAge() {
+		 Scanner sc=new Scanner(System.in);
+		 int age=0;
+		 System.out.println("ENTER AGE: ");
+		 age=sc.nextInt();
+		 if(age>=18) {
+				System.out.println("YOU'RE ELIGIBLE TO MAKE AN INVESTMENT ");
+			}
+			 else {
+			        System.out.println("YOU'RE NOT ELIGIBLE TO MAKE AN INVESTMENT ");
+			        System.exit(0);
+			 }
+		 return age;
+	 }
+
+	 public static int readYear() {
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("\nEnter Investment Period(Years): ");
+		 int year=sc.nextInt();
+		 return year;
+	 
+	 
+	 }
+	 }
