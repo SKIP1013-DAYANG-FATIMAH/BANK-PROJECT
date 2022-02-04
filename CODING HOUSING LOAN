@@ -1,0 +1,161 @@
+import java.util.Scanner; 
+
+public class HousingLoan {
+	public static void main(String[] args) {
+		
+		String info[] = new String[2];
+		Scanner sc = new Scanner(System.in);
+		
+		
+	    showMessage();
+	    customerInfo(info);
+	    readAge();
+	    showMessage2();
+	    loaneligibility(); 
+	    
+	    
+            
+	}   	
+	
+	public static void showMessage() {
+System.out.println("**************************************UUM BANK**********************************************");
+		
+	    System.out.print("WELCOME TO UUM BANK!");
+	}
+	
+		
+	public static void readAge() {
+		Scanner sc = new Scanner(System.in);
+		int age=0;
+		System.out.print("Age            : ");
+			age =sc.nextInt();
+		if (age>= 18) 
+		{
+			    System.out.println();
+				System.out.println("                        Congratulations You're Eligible To Apply A Loan");
+		}
+		else
+		{
+			System.out.println();
+			System.out.println("                                 Sorry You're Uneligible To Apply A Loan");
+			System.exit(0);
+		}
+	}
+	
+	public static void customerInfo(String[]info) {
+		Scanner sc = new Scanner(System.in);
+		String name = info[0];
+		String accnumber = info[1];
+		
+		System.out.println();
+		System.out.print("Name           :");
+		info[0] = sc.next();
+		System.out.print("Account Number :");
+		info[1] = sc.next();
+		
+	}
+	public static void showMessage2() {
+		
+		int suggest;
+        Scanner sc = new Scanner(System.in);
+       
+       String Averagesalary[] = {"1.RM1500 - RM2000", "2.RM2001 - RM3000", "3.RM3001 - RM4000", "4.RM4001 - RM5000","5.RM5000 and above"};
+       
+	   System.out.println("\nChoose Your Average Monthly Salary : ");
+       System.out.println(Averagesalary[0]);
+       System.out.println(Averagesalary[1]);
+       System.out.println(Averagesalary[2]);
+       System.out.println(Averagesalary[3]);
+       System.out.println(Averagesalary[4]);
+	
+    
+       System.out.print("\nPlease Enter Your Average Monthly Salary  : ");
+       suggest = sc.nextInt();
+       
+       switch(suggest) {
+       case 1: 
+    	   System.out.print("Maximum Loan You Can Apply:  RM50000" );
+    	   break;
+       
+       
+	   case 2: 
+ 	       System.out.print("Maximum Loan You Can Apply:  RM90000" );
+ 	       break;
+ 	       
+	   case 3:
+		   System.out.print("Maximum Loan You Can Apply:  RM130000");
+		   break;
+		   
+	   case 4:
+		   System.out.print("Maximum Loan You Can Apply:  RM170000");
+		   break;
+		   
+	   case 5:
+		   System.out.print("You Can Check Your Maximun Amount Loan You Can Apply Later");
+		   break;
+       }
+
+	}
+	public static double loaneligibility() {
+		
+		double salary, houseprice, maximumloan, loan, totalloan, monthlypayment, loanperiod, 
+	           eligiblesalary, eligibleloan;
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.print("\n=================================================================================================");
+		System.out.print("\nMonthly salary  :RM");
+		salary = sc.nextInt();
+		System.out.print("House Price     : RM");
+		houseprice = sc.nextDouble();
+		
+		maximumloan = 0.9 * houseprice;
+		System.out.printf("Maximum Loan  : RM %.2f" , maximumloan);
+		
+		System.out.println();
+		
+		System.out.print("Loan         : RM");
+		loan = sc.nextDouble();
+		
+		totalloan = 1.05 * loan;
+		System.out.printf("Total Loan    : RM%.2f" , totalloan);
+		
+		eligiblesalary = 0.4 * salary;
+		eligibleloan = 0.01 * totalloan;
+		
+		if(eligiblesalary>eligibleloan) {
+			System.out.println("\n                             Your're Aligible To Make A Loan");
+        	System.out.print("\n=================================================================================================");
+			
+			monthlypayment = 0.005 * totalloan;
+			System.out.printf("\nMonthly Payment: RM%.2f" , monthlypayment);
+			
+		    loanperiod = 0.002*totalloan;
+			System.out.print("\nLoan Period    :" + loanperiod + "months");
+			
+			System.out.print("\n==================================================================================================");
+			
+			System.out.println("\n                           Thank You For Using Our Service");
+
+            System.exit(0);
+            }
+        
+            else
+            {
+            	System.out.println();
+            	System.out.println("\n                             Your're Not Aligible To Make A Loan"
+            			         + "                               You Can Try With Lower Amount Loan "); 
+            	System.out.print("================================================================================================"); 				
+				System.out.println("\n                             Thank You For Using Our Service");
+				
+            }
+		sc.close();
+            		               		        		              		            	           		                		
+		return salary;
+		
+	}
+		
+	
+
+	}
+
