@@ -1,0 +1,122 @@
+import java.util.Scanner;
+
+public class CreditCard {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int apr=14;
+		double dailyPeriod=0.038;
+		String p_info []=new String[5];
+		
+		readAge();
+		personalInfo(p_info);
+		readApr(14,0.038);
+		readInterest();
+		
+	}
+	
+	public static void readAge() {
+		Scanner sc = new Scanner (System.in);
+		int age=0;
+		System.out.println("_________________________________UUM BANK_________________________________");
+		System.out.print("Please enter you age : ");
+			age =sc.nextInt();
+		if (age>= 18) 
+		{
+				System.out.println("Congratulations You're Eligible");
+		}
+		else
+		{
+			System.out.println("Sorry You're Uneligible");
+			System.exit(0);
+		}
+		System.out.println("_________________________________UUM BANK_________________________________");
+	}
+
+	
+	String p_info [] = new String[4];
+	public static void personalInfo(String [] p_info) 
+	{
+	    			String name = p_info[0];
+	    	        String phone = p_info[1];
+	    	        String accnumber = p_info[2];
+	    	        String myKad = p_info [3];
+	    	        String Income = p_info [4];
+	    	        
+	    	        Scanner sc=new Scanner(System.in);
+	    	        
+	    	        System.out.print("Name                 : ");
+			        p_info [0] = sc.nextLine();
+			        System.out.print("Phone Number         : ");
+			        p_info [1] = sc.nextLine();
+			        System.out.print("Account Number       : ");
+			        p_info [2] = sc.nextLine();
+			        System.out.print("MyKad Identity Number:");
+					p_info [3] = sc.nextLine();
+					System.out.print("Income               : RM");
+					p_info [4] = sc.nextLine();
+					
+	}
+	
+	public static void readApr(int x,double y)
+	{
+		System.out.println("_________________________________UUM BANK_________________________________");
+		System.out.println("Please read the information below: ");
+		System.out.println("The annual percentage rate (APR) for purchases = "+ x +"%");
+		System.out.println("The daily period rate is = "+y+"%");
+	}
+	
+	public static void readInterest()
+	{
+		Scanner a=new Scanner(System.in);
+		System.out.println("_________________________________UUM BANK_________________________________");
+		System.out.println("\nPlease enter information needed:");
+		System.out.println("Choose month: ");
+		System.out.println("1.January\n2.February\n3.March\n4.April\n5.May\n6.June\n7.July\n8.August\n9.September\n10.October\n11.November\n12.December");
+		int month=a.nextInt();
+		switch(month)
+		{
+		case 1 : System.out.println("January"); break;
+		case 2 : System.out.println("February"); break;
+		case 3 : System.out.println("March"); break;
+		case 4 : System.out.println("April"); break;
+		case 5 : System.out.println("May"); break;
+		case 6 : System.out.println("June"); break;
+		case 7 : System.out.println("July"); break;
+		case 8 : System.out.println("August"); break;
+		case 9 : System.out.println("September"); break;
+		case 10 : System.out.println("October"); break;
+		case 11 : System.out.println("November"); break;
+		case 12 : System.out.println("December"); break;
+		}
+		System.out.println("\nEnter amount of credit card being use in "+month+": RM");
+		double AmountUse=a.nextDouble();
+		System.out.println("Enter the date for amount of credit card being use(1-30): ");
+		int dateUse=a.nextInt();
+		System.out.println("Enter amount of the payment that have done in "+month+": RM");
+		double AmountPay=a.nextDouble();
+		System.out.println("Enter the date for amount of the payment that have done(1-30): ");
+		int datePay=a.nextInt();
+	
+		int age, accnum, numPhone, services;
+		String name, IcNo;
+		double income, sumDaily, avgDaily, interest, balance;
+		double dailyPeriod=0.038;
+		int daysBilling=30;
+		balance=AmountUse-AmountPay;
+		sumDaily=(AmountUse*(datePay-dateUse))+ (AmountPay*(30-datePay));
+		avgDaily=sumDaily/30;
+		interest=avgDaily*(dailyPeriod/100)*daysBilling;
+	
+		System.out.println("_________________________________UUM BANK_________________________________");
+		System.out.println("Balance that been carried is : RM"+balance);
+		System.out.println("Sum of daily balances (RM): "+sumDaily);
+		System.out.println("Days in billing period:"+daysBilling);
+		System.out.printf("Average daily balance: %.2f",avgDaily);
+		System.out.printf("\nInterest charge: %.2f" , avgDaily, "(",dailyPeriod,"/100)",daysBilling);
+		System.out.printf("\nYour interest charge is RM%.2f",interest);
+		System.out.println("\n\tThe less your average daily balance, the less your interest charge!!!");
+		System.out.println("\t\t  Thank you for using our services!");
+		System.out.println("_________________________________UUM BANK_________________________________");
+	}
+}
+
