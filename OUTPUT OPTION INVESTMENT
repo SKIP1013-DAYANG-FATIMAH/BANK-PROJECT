@@ -1,0 +1,120 @@
+
+--------WELCOME TO UNIVERSAL BANK!--------
+
+1 = Business Loan 
+2 = Personal Account 
+3 = Credit Card 
+4 = Housing Loan 
+5 = Investment
+
+Please choose your service : 
+5
+**********WELCOME TO UUM BANK********** 
+Enter your username and password
+   USERNAME: mellia
+   PASSWORD: 12345
+_____________________________________________________
+
+ENTER NAME: 
+amilia
+ENTER AGE:
+30
+YOU'RE ELIGIBLE TO MAKE AN INVESTMENT 
+==============================================================
+What's Your Primary Reason For Investing?
+ 1.Saving For Retirement
+ 2.General Saving
+ 3.Emergency Fund
+ 4.Major Purchase
+2
+General Saving
+
+Are You Currently Investing?
+  1.YES
+  2.NO
+2
+NO
+
+Enter Investment Amount: 
+10000
+Enter Financial Goal:
+500000
+Enter Investment Period(Years): 
+20
+_____________________________________________________
+CHOOSE TYPE OF INVESTMENT:
+    INVESTMENT            RATE
+
+1.UNIT TRUST FUND         1.8%
+
+2.    GOLD                0.5%
+
+3.    BONDS               2.5%
+
+4.    SUKUK               1.2%
+3
+BONDS - 2.5%
+
+Enter Interest Rate : 
+2.5
+********** YOUR INVESTMENT PORTFOLIO **********
+
+     Name               : amilia
+     Starting Age       : 30
+     Age End Investment : 50
+
+   Yearly Investment        : RM 10000.00 
+   Total Amount Invested    : RM 200000.00 
+   Simple Interest          : RM 5000.00 
+   Compound Interest        : RM 1386.16 
+   Total Interest Earned    : RM 6386.16 
+   Accumulated Value is     : RM 16386.16 
+_____________________________________________________
+        DETAILS OF FUTURE VALUE IN INVESTMENT
+
+           YEAR             FUTURE AMOUNT
+             1                10,250.00 
+             2                10,506.25 
+             3                10,768.91 
+             4                11,038.13 
+             5                11,314.08 
+             6                11,596.93 
+             7                11,886.86 
+             8                12,184.03 
+             9                12,488.63 
+             10                12,800.85 
+             11                13,120.87 
+             12                13,448.89 
+             13                13,785.11 
+             14                14,129.74 
+             15                14,482.98 
+             16                14,845.06 
+             17                15,216.18 
+             18                15,596.59 
+             19                15,986.50 
+             20                16,386.16 
+
+    After 20 Years at 2.5 Interest, You Will Have RM 16,386.16 
+
+_____________________________________________________
+
+
+IF YOUR ENTIRE LOST AT 10%, WHAT WOULD YOU DO?
+  1.sell all investment
+  2.keep all investment
+  3.invest to other market
+3
+3
+PLEASE CHOOSE OTHER MARKET
+
+  1.UNIT TRUST FUND
+  2.GOLD
+  3.BONDS
+  4.SUKUK
+3
+BONDS
+SORRY! THIS IS YOUR CURRENT INVESTMENT. PLEASE CHOOSE ANOTHER MARKET
+2
+
+WE KEEP YOUR CHOICE FOR FUTURE NEEDS. THANK YOU!!
+******************************************************
