@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class MainMenu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner (System.in);
+		System.out.println("--------WELCOME TO UNIVERSAL BANK!--------");
+		System.out.println("\n1 = Business Loan \n2 = Personal Account \n3 = Credit Card \n4 = Housing Loan \n5 = Investment");
+		System.out.println("\nPlease choose your service : ");
+		int option = sc.nextInt();
+		
+		if (option == 1)
+		{
+			BusinessLoan b = new BusinessLoan();
+			b.main(args);
+		}
+		else if (option == 2)
+		{
+			PersonalAccount p = new PersonalAccount();
+			p.main(args);
+		}
+		else if (option == 3)
+		{
+			CreditCard c = new CreditCard();
+			c.main(args);
+		}
+		else if (option == 4)
+		{
+			HousingLoan h = new HousingLoan();
+			h.main(args);
+		}
+		else if (option == 5)
+		{
+			Investment i = new Investment();
+			i.main(args);
+		}
+		else
+		{
+			System.out.println("Invalid number! Please Try Again :)");
+		}
+	}
+
+}
+ 
