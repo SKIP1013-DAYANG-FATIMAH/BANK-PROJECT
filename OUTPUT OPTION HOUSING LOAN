@@ -1,0 +1,41 @@
+
+--------WELCOME TO UNIVERSAL BANK!--------
+
+1 = Business Loan 
+2 = Personal Account 
+3 = Credit Card 
+4 = Housing Loan 
+5 = Investment
+
+Please choose your service : 
+4
+**************************************UUM BANK********************************************** 
+WELCOME TO UUM BANK!
+Name           :Tahfiz
+Account Number :1546299
+Age            : 20
+
+                        Congratulations You're Eligible To Apply A Loan
+
+Choose Your Average Monthly Salary : 
+1.RM1500 - RM2000
+2.RM2001 - RM3000
+3.RM3001 - RM4000
+4.RM4001 - RM5000
+5.RM5000 and above
+
+Please Enter Your Average Monthly Salary  : 3
+Maximum Loan You Can Apply:  RM130000
+=====================================================================================
+Monthly salary  :RM3500
+House Price     : RM160000
+Maximum Loan  : RM 144000.00
+Loan         : RM130000
+Total Loan    : RM136500.00
+                             Your're Aligible To Make A Loan
+
+=====================================================================================
+Monthly Payment: RM682.50
+Loan Period    :273.0months
+=====================================================================================
+                           Thank You For Using Our Service
