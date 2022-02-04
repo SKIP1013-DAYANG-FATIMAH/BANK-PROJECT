@@ -1,0 +1,208 @@
+import java.util.Scanner;
+
+public class PersonalAccount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner (System.in);;
+		double [] rate = {3.0,2.5,2.0};
+		int[] year= {1, 2, 3};
+		int phoneo;
+		double accbalance;
+		double msalary ;
+		double asalary;
+		double withdram=0;
+		double exceed;
+		double repayment;
+		double penalty=0;
+		int counter = 0;
+		boolean access = true;
+		showMessage();
+		readAge();
+		System.out.print("Name : ");
+		String name =sc.next();
+		System.out.print("Phone Number : ");
+		String phoneno =sc.next();
+		System.out.print("Account number : ");
+		String accnumber =sc.next();
+		readAccnumber(accnumber);
+		System.out.print("Monthly Salary : RM ");
+		msalary = sc.nextDouble();
+		System.out.print("Bank Balance   :RM "); 
+		accbalance = sc.nextDouble(); 
+		
+		System.out.println("***************************************************************");
+		System.out.print("Withdraw Amount :RM "); 
+		withdram = sc.nextDouble(); 
+		readExceed(withdram, accbalance, name,counter, accnumber,msalary);
+		asalary= msalary*12;System.out.printf("Your annual salary is RM %.2f", asalary);
+		System.out.print("\n_____________________________________________________________");
+		 System.out.println("\n         ANNUAL SALARY           INTEREST RATE(%)     ");
+		 System.out.println("     RM50,000 and above                3.0           ");
+		System.out.println("       RM20,001 - RM49,999                2.5           ");
+		 System.out.println("         below RM 20,000                  2.0          ");
+		System.out.println("____________________________________________________________");
+		double readRate = readRate(rate, asalary);
+		double readExceed = readExceed(withdram, accbalance,name,counter, accnumber,msalary);
+		repayment = (readExceed*(readRate/100) + readExceed);
+		System.out.printf("Your total amount of repayment is RM %.2f", repayment);
+		System.out.print("\n_______________________________________________________________");
+		System.out.println("\n       REPAYMENT AMOUNT              DURATION     ");
+		System.out.println("        RM20,000 and above             3 YEARS          ");
+		System.out.println("        RM1,001 - RM19,999             2 YEARS           ");
+		System.out.println("          below RM 1,000               1 YEAR          ");
+		System.out.print("_______________________________________________________________");
+		System.out.println("");
+		int yr;
+		if (repayment>= 20000 ){
+		yr = year[0];
+		System.out.println("The duration of repayment is ");
+		 System.out.print(yr);
+		System.out.println(" year");
+		 }
+		else if (repayment<= 19999 && repayment >=1001 )
+		 {
+		yr = year[1];
+		System.out.println("The duration of repayment is ");
+		System.out.print(yr);
+		System.out.println(" years");
+		 }
+		else 
+		{
+		yr = year[2];
+		System.out.println("The duration of repayment is ");
+		 System.out.print(yr);
+		 System.out.println(" years");
+		 }
+		double monthlyp1 = repayment/(yr*12); 
+		penalty = monthlyp1 *(0.5/100);
+		System.out.println("***************************************************************");
+		 System.out.println("                           UUM BANK");
+		System.out.println("***************************************************************");
+					 System.out.println("Name            : " + name);
+					 System.out.println("Phone Number    : " + phoneno);
+					 System.out.println("Account Number  : " + accnumber);
+					 System.out.printf("Withdraw Amount : RM " + withdram ); 
+					 System.out.println("\nBank Balance    : RM 0.00"); 
+					 System.out.println("");
+		System.out.println("***************************************************************");
+		 System.out.printf("\nTotal repayment     : RM %.2f" , repayment);
+		System.out.printf("\nMonthly repayment  : RM %.2f" , monthlyp1);
+		 System.out.println("");
+		System.out.printf("\nA monthly penalty of 0.5%% will be charge for any late payment");
+		 System.out.println("\nThe repayment should be paid in " + yr + " year time");
+		 System.out.println("");
+		 System.out.printf("\nPenalty amount   (0.5%%)    : RM %.2f" ,penalty);
+		 System.out.println("");
+		 System.out.println("                         THANK YOU!");
+		System.out.println("***************************************************************");
+		}
+		public static void showMessage() {
+		System.out.println("***************************************************************");
+		System.out.println("                        WELCOME TO UUM BANK");
+		System.out.println("***************************************************************");
+		System.out.println("");
+		}
+		public static void readAge() {
+		Scanner sc = new Scanner (System.in);
+		int age=0;
+		System.out.print("Please enter you age : ");
+		age =sc.nextInt();
+		if (age>= 18) 
+		{
+		System.out.println("Congratulations You're Eligible");
+		}
+		else
+		{
+		System.out.println("Sorry You're Uneligible");
+		System.exit(0);
+		}
+		}
+		public static String readAccnumber(String accnumber) {
+		Scanner sc = new Scanner (System.in);
+				int counter = 0;
+				boolean access = true;
+				do {
+				if (accnumber.length() == 8) 
+				{
+				System.out.println("Checking....Please wait");
+				char ch = accnumber.charAt(0);
+				if  (ch >= '0' && ch <= '9')
+				{
+					System.out.println("Login Successful");
+				}
+				else if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') ||  (ch =='_')||(ch == '*') || (ch == '@') || (ch == '#') || (ch == '$'))
+				{  
+		System.out.println("Register unsuccessful");
+				} 
+				else 
+				{  
+					System.out.println("Invalid");
+					System.exit(0);
+				}
+				}
+				else
+				{ 
+					System.out.println("Access Failed");
+				 counter = counter + 1;
+				System.out.println("Right Here!!! Number of count: " + counter);
+		if (counter >= 3)
+				{
+					access = false;
+					System.out.println("3 tries exceeded! You are not allowed to login the account.");
+				System.exit(0);
+				return accnumber;}
+				return accnumber;}
+				return accnumber;}
+			while (access == true);
+			}
+			public static double readExceed(double withdram, double accbalance, String name,int phoneno, String accnumber, double msalary){
+				Scanner sc = new Scanner(System.in);
+				double exceed=0;
+				double asalary;
+				if (withdram<= accbalance)
+				 {
+					 accbalance= accbalance - withdram;
+					 System.out.println("***************************************************************");
+		 System.out.println("                           UUM BANK");
+		System.out.println("***************************************************************");
+					 System.out.println("Name            : " + name);
+					 System.out.println("Phone Number : " + phoneno);
+					 System.out.println("Account Number  : " + accnumber);
+					 System.out.printf("Withdraw Amount : RM " + withdram ); 
+					 System.out.println("\nBank Balance    : RM 0.00"); 
+					 System.out.println("");
+					 System.out.println("***************************************************************");
+		 System.out.println("                         THANK YOU!");
+		System.out.println("***************************************************************");
+				 }
+				 else 
+				 {
+					 exceed = withdram - accbalance;
+		 System.out.printf("\nThe exceeding amount is RM %.2f", exceed);
+					 System.out.println("");
+					 System.out.println("***************************************************************");
+			}return exceed;
+		}
+			public static double readRate(double []rate, double asalary) {
+				if (asalary>=50000)
+			 	{
+				System.out.print("The interest rate charged is ");
+				System.out.println( rate[0]);
+				return rate[0];
+			 	}
+				  else if(asalary<=49999 && asalary>=20001)
+				{
+				System.out.print("The interest rate charged is ");
+				System.out.println( rate[1]);
+				return rate[1];
+				}
+				 else
+				 {
+				System.out.print("The interest rate charged is ");
+				System.out.println( rate[2]);
+				return rate[2];
+				 }
+		  
+		}
+	}
