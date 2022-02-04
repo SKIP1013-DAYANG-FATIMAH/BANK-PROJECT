@@ -1,0 +1,284 @@
+import java.util.Scanner;
+
+public class BusinessLoan {
+
+public static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+			
+		 	int years;
+	        double salary;
+	        double rate;
+	        double loan;
+	        String statement;
+	        String SuggestedLoan[] = {"1.RM10,000", "2.RM20,000", "3.RM50,000", "4.RM100,000","5.Others"};
+	        String info [] = new String[4];
+	       
+
+	        System.out.println("====================================UUM Bank====================================");
+	       
+	        readAge();
+	        personalInfo(info);
+	        Customersalary();
+	       
+	        System.out.print("\nDo you agree with the suggested years?");
+			
+			System.out.print("\nPress 'Y' for YES or 'N' for NO : ");
+			statement = sc.next();
+			
+			if (statement.equals("Y") || (statement.equals("y")))
+			{
+				System.out.print("\nThank you for your cooperation!");
+				System.out.println("");
+				System.out.print("\nPlease insert the amount of years again to confirm : ");
+				years = sc.nextInt();
+				
+			}
+			else
+			{
+				System.out.print("\nPlease enter the amount of years that you want : ");
+				years = sc.nextInt();
+				System.out.println("");
+				System.out.println("Thank you for your cooperation!");
+				System.out.println("");
+				
+			}
+			
+			System.out.println("=========================================================================================");
+
+	        System.out.println("\nSUGGESTED LOANS : ");
+	        System.out.println(SuggestedLoan[0]);
+	        System.out.println(SuggestedLoan[1]);
+	        System.out.println(SuggestedLoan[2]);
+	        System.out.println(SuggestedLoan[3]);
+	        System.out.println(SuggestedLoan[4]);
+	        
+	        
+	        System.out.print("\nPlease choose your amount of loan (1/2/3/4/5) : ");
+	        int ch = sc.nextInt();
+	       
+				switch (ch) {
+	            case 1 :
+	                System.out.println("\nAmount of Loan : RM10,000");
+	                System.out.println("Interest Rate  : 8%");
+	                loan = 10000;
+	                rate = 0.08;
+	                double irate = ((rate/100)*loan*years);
+	     	        double monthlyirate = (irate/(years*12));
+	     			double monthlyp = ((loan/(years*12) + monthlyirate));
+	     			double annualp = monthlyp*12;
+	     			double penalty = ((1.0/100)*monthlyp*12);
+	    			
+	    			System.out.println("=========================================================================================");
+	    			System.out.println("");
+	    			System.out.println("REPAYMENT : ");
+	    			System.out.printf("\nThe sum of interest is       : RM %.2f" , irate);
+	    			System.out.printf("\nThe monthly repayment is     : RM %.2f" , monthlyp);
+	    			System.out.printf("\nThe annual repayment is      : RM %.2f" , annualp);
+	    			System.out.println("");
+	    			
+	    			System.out.println("=========================================================================================");
+	    			
+	    			System.out.println("\nIf you are UNABLE to pay it on time,a PENALTY will be charged by the bank.");
+	    			
+	    			
+	    			System.out.println("\nPenalty Charged (1.0% per annum) : RM " + penalty);
+	    			System.out.println("");
+	    			System.out.println("=========================================================================================");
+	    			System.out.println("\n                            THANK YOUR FOR CHOOSING US!");
+	    			System.out.println("\n=========================================================================================");
+	                
+	                break;
+	                
+	            case 2 :
+	            	System.out.println("\nAmount of Loan : RM20,000");
+	                System.out.println("Interest Rate  : 8%");
+	                loan = 20000;
+	                rate = 0.08;
+	                irate = ((rate/100)*loan*years);
+	    			monthlyirate = (irate/(years*12));
+	    			monthlyp = ((loan/(years*12) + monthlyirate));
+	    			annualp = monthlyp*12;
+	    			penalty = ((1.0/100)*monthlyp*12);
+	    			
+	    			System.out.println("=========================================================================================");
+	    			System.out.println("");
+	    			System.out.println("REPAYMENT : ");
+	    			System.out.printf("\nThe sum of interest is       : RM %.2f" , irate);
+	    			System.out.printf("\nThe monthly repayment is     : RM %.2f" , monthlyp);
+	    			System.out.printf("\nThe annual repayment is      : RM %.2f" , annualp);
+	    			System.out.println("");
+	    			
+	    			System.out.println("=========================================================================================");
+	    			
+	    			System.out.println("\nIf you are UNABLE to pay it on time,a PENALTY will be charged by the bank.");
+	    			
+	    			
+	    			System.out.println("\nPenalty Charged (1.0% per annum) : RM " + penalty);
+	    			System.out.println("");
+	    			System.out.println("=========================================================================================");
+	    			System.out.println("\n                            THANK YOUR FOR CHOOSING US!");
+	    			System.out.println("\n=========================================================================================");
+	                break;
+	                
+	            case 3 :
+	            	 System.out.println("\nAmount of Loan : RM50,000");
+		             System.out.println("Interest Rate  : 7%");
+		             loan = 50000;
+		             rate = 0.07;
+		             irate = ((rate/100)*loan*years);
+		    		 monthlyirate = (irate/(years*12));
+		    		 monthlyp = ((loan/(years*12) + monthlyirate));
+		    		 annualp = monthlyp*12;
+		    		 penalty = ((1.0/100)*monthlyp*12);
+		    		 
+		    		System.out.println("=========================================================================================");
+		    		System.out.println("");
+		    		System.out.println("REPAYMENT : ");
+		    		System.out.printf("\nThe sum of interest is       : RM %.2f" , irate);
+		    		System.out.printf("\nThe monthly repayment is     : RM %.2f" , monthlyp);
+		    		System.out.printf("\nThe annual repayment is      : RM %.2f" , annualp);
+		    		System.out.println("");
+		    			
+		    		System.out.println("=========================================================================================");
+		    			
+		    		System.out.println("\nIf you are UNABLE to pay it on time,a PENALTY will be charged by the bank.");
+		    			
+		    			
+		    		System.out.println("\nPenalty Charged (1.0% per annum) : RM " + penalty);
+		    		System.out.println("");
+		    		System.out.println("=========================================================================================");
+		    		System.out.println("\n                            THANK YOUR FOR CHOOSING US!");
+		    		System.out.println("\n=========================================================================================");
+	                break;
+	                
+	            case 4 :
+	                System.out.println("\nAmount of Loan : RM100,000");
+	                System.out.println("Interest Rate  : 6.5%");
+	                loan = 100000;
+	                rate = 0.065;
+	                irate = ((rate/100)*loan*years);
+		    		monthlyirate = (irate/(years*12));
+		    		monthlyp = ((loan/(years*12) + monthlyirate));
+		    		annualp = monthlyp*12;
+		    		penalty = ((1.0/100)*monthlyp*12);
+		    		
+		    		System.out.println("=========================================================================================");
+		    		System.out.println("");
+	    			System.out.println("REPAYMENT : ");
+	    			System.out.printf("\nThe sum of interest is       : RM %.2f" , irate);
+	    			System.out.printf("\nThe monthly repayment is     : RM %.2f" , monthlyp);
+	    			System.out.printf("\nThe annual repayment is      : RM %.2f" , annualp);
+	    			System.out.println("");
+	    			
+	    			System.out.println("=========================================================================================");
+	    			
+	    			System.out.println("\nIf you are UNABLE to pay it on time,a PENALTY will be charged by the bank.");
+	    			
+	    			
+	    			System.out.println("\nPenalty Charged (1.0% per annum) : RM " + penalty);
+	    			System.out.println("");
+	    			System.out.println("=========================================================================================");
+	    			System.out.println("\n                            THANK YOUR FOR CHOOSING US!");
+	    			System.out.println("\n=========================================================================================");
+	                break;
+	                
+	            case 5 :
+	                System.out.println("Please enter the amount of loan : RM");
+	                loan = sc.nextDouble();
+	                if ((loan >= 5000) && (loan <= 20000))
+	    			{
+	    				System.out.println("INTEREST RATE : 8% ");
+	    			}
+	    			else if ((loan >= 20001) && (loan <= 50000))
+	    			{
+	    				System.out.println("INTEREST RATE : 7% ");
+	    			}
+	    			else 
+	    			{
+	    				System.out.println("INTEREST RATE : 6.5% ");
+	    			}
+	                System.out.println("Please enter the interest rate again to reconfirm : ");
+	                rate = sc.nextDouble();
+	                irate = ((rate/100)*loan*years);
+		    		monthlyirate = (irate/(years*12));
+		    		monthlyp = ((loan/(years*12) + monthlyirate));
+		    		annualp = monthlyp*12;
+		    		penalty = ((1.0/100)*monthlyp*12);
+	                
+	                System.out.println("=========================================================================================");
+	                System.out.println("");
+	    			System.out.println("REPAYMENT : ");
+	    			System.out.println("\nThe sum of interest is       : RM " + irate);
+	    			System.out.println("\nThe monthly repayment is     : RM " + monthlyp);
+	    			System.out.println("\nThe annual repayment is      : RM " + annualp);
+	    			System.out.println("");
+	    			
+	    			System.out.println("=========================================================================================");
+	    			
+	    			System.out.println("\nIf you are UNABLE to pay it on time,a PENALTY will be charged by the bank.");
+	    			
+	    			
+	    			System.out.println("\nPenalty Charged (1.0% per annum) : RM " + penalty);
+	    			System.out.println("");
+	    			System.out.println("=========================================================================================");
+	    			System.out.println("\n                            THANK YOUR FOR CHOOSING US!");
+	    			System.out.println("\n=========================================================================================");
+	                break;
+	        }
+			}
+			
+	
+	public static void personalInfo(String [] info) {
+			String name = info[0];
+	        String phoneno = info[1];
+	        String accnumber = info[2];
+	        String pin = info[3];
+	        
+			        System.out.print("\nName            : ");
+			        info [0] = sc.next();
+			        System.out.print("\nPhone Number    : ");
+			        info [1] = sc.next();
+			        System.out.print("\nAccount Number  : ");
+			        info [2] = sc.next();
+			        System.out.print("\nPin             : ");
+			        info [3] = sc.next();
+			        System.out.println("");
+	}
+			
+	public static double Customersalary () {
+			double salary;
+	        System.out.println("=========================================================================================");
+			System.out.print("\nMonthly salary : RM ");
+			salary = sc.nextDouble();
+			double sumsalary = (salary*12);
+		    System.out.printf("Your annual salary is  : RM %.2f " , sumsalary);
+		    System.out.println("");
+		        if (sumsalary > 50000) {
+		            System.out.println("\nSUGGESTED YEARS OF LOAN REPAYMENT : 3 YEARS");
+		        } else if ((sumsalary <= 50000) && (sumsalary >= 20000)) {
+		            System.out.println("\nSUGGESTED YEARS OF LOAN REPAYMENT : 4 YEARS");
+		        } else {
+		            System.out.println("\nSUGGESTED YEARS OF LOAN REPAYMENT : 5 YEARS");
+		        }
+				return sumsalary;
+		}
+	public static void readAge() {
+		
+			int age=0;
+			System.out.print("Please enter you age : ");
+			age =sc.nextInt();
+			if (age>= 18) 
+			{
+				System.out.println("Congratulations You're Eligible");
+			}
+			else
+			{
+				System.out.println("Sorry You're Uneligible");
+				System.exit(0);
+			}
+	}
+	
+}
