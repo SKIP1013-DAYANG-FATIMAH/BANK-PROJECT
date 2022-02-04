@@ -1,0 +1,62 @@
+--------WELCOME TO UNIVERSAL BANK!--------
+
+1 = Business Loan 
+2 = Personal Account 
+3 = Credit Card 
+4 = Housing Loan 
+5 = Investment
+
+Please choose your service : 
+3
+_________________________________UUM BANK_________________________________
+Please enter you age : 20
+Congratulations You're Eligible
+
+Welcome to Credit card service
+_________________________________UUM BANK_________________________________
+Name                 : JESSIE
+Phone Number         : 0139872678
+Account Number       : 92641892931923
+MyKad Identity Number:020710010372
+Income               : RM3200.00
+_________________________________UUM BANK_________________________________
+Please read the information below: 
+The annual percentage rate (APR) for purchases = 14%
+The daily period rate is = 0.038%
+_________________________________UUM BANK_________________________________
+
+Please enter information needed:
+Choose month: 
+1.January
+2.February
+3.March
+4.April
+5.May
+6.June
+7.July
+8.August
+9.September
+10.October
+11.November
+12.December
+11
+November
+
+Enter amount of credit card being use in 11: RM
+2500.00
+Enter the date for amount of credit card being use(1-30): 
+3
+Enter amount of the payment that have done in 11: RM
+1500
+Enter the date for amount of the payment that have done(1-30): 
+7
+_________________________________UUM BANK_________________________________
+Balance that been carried is : RM1000.0
+Sum of daily balances (RM): 44500.0
+Days in billing period:30
+Average daily balance: 1483.33
+Interest charge: 1483.33
+Your interest charge is RM16.91
+The less your average daily balance, the less your interest charge!!!
+		  Thank you for using our services!
+_________________________________UUM BANK_________________________________
