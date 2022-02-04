@@ -1,0 +1,67 @@
+--------WELCOME TO UNIVERSAL BANK!--------
+
+1 = Business Loan 
+2 = Personal Account 
+3 = Credit Card 
+4 = Housing Loan 
+5 = Investment
+
+Please choose your service : 
+1
+====================================UUM Bank====================================
+Please enter you age : 20
+Congratulations You're Eligible
+
+Name            : Dayang
+
+Phone Number    : 0199399167
+
+Account Number  : 0303002020202
+
+Pin             : XXXXXX
+
+=========================================================================================
+
+Monthly salary : RM 3500
+Your annual salary is  : RM 42000.00 
+
+SUGGESTED YEARS OF LOAN REPAYMENT : 4 YEARS
+
+Do you agree with the suggested years?
+Press 'Y' for YES or 'N' for NO : Y
+
+Thank you for your cooperation!
+
+Please insert the amount of years again to confirm : 4
+=========================================================================================
+
+SUGGESTED LOANS : 
+1.RM10,000
+2.RM20,000
+3.RM50,000
+4.RM100,000
+5.Others
+
+Please choose your amount of loan (1/2/3/4/5) : 4
+
+Amount of Loan : RM100,000
+Interest Rate  : 6.5%
+=========================================================================================
+
+REPAYMENT : 
+
+The sum of interest is       : RM 260.00
+The monthly repayment is     : RM 2088.75
+The annual repayment is      : RM 25065.00
+=========================================================================================
+
+If you are UNABLE to pay it on time,a PENALTY will be charged by the bank.
+
+Penalty Charged (1.0% per annum) : RM 250.64999999999998
+
+=========================================================================================
+
+                            THANK YOUR FOR CHOOSING US!
+
+=========================================================================================
+
